@@ -151,8 +151,8 @@ h1, h2 {
     <div class="container">
         <div class="case-study">
             <h2>Studi Kasus: Antrian Konter Handphone</h2>
-            <p>Di sebuah konter handphone, rata-rata waktu antar kedatangan pelanggan adalah 5 menit, 
-                sementara rata-rata waktu pelayanan oleh satu pelayan adalah 8 menit.</p>
+            <p>Di sebuah konter handphone, rata-rata waktu antar kedatangan pelanggan adalah 8 menit, 
+                sementara rata-rata waktu pelayanan oleh dua pelayan adalah 5 menit.</p>
             <p>
                 Dengan menggunakan metode antrian, Anda bisa menghitung waktu tunggu rata-rata pelanggan 
                 dan tingkat pemanfaatan pelayan untuk meningkatkan efisiensi konter.
@@ -264,27 +264,27 @@ def result_page():
         <p><strong>Langkah-langkah Perhitungan:</strong></p>
         <ol>
             <li>Hitung laju kedatangan \\( \\lambda \\):</li>
-            <p>\\[ \\lambda = \\frac{{1}}{{\\text{{Waktu Antar Kedatangan}}}} = \\frac{{1}}{{{waktu_antar_kedatangan:.1f}}} = {lambda_val:.1f} \\]</p>
+            <p>\\[ \\lambda = \\frac{{1}}{{\\text{{Waktu Antar Kedatangan}}}} = \\frac{{1}}{{{waktu_antar_kedatangan:.1f}}} = {lambda_val:.3f} \\]</p>
 
             <li>Hitung laju pelayanan \\( \\mu \\):</li>
-            <p>\\[ \\mu = \\frac{{1}}{{\\text{{Waktu Pelayanan}}}} = \\frac{{1}}{{{waktu_pelayanan:.1f}}} = {mu:.3f} \\]</p>
+            <p>\\[ \\mu = \\frac{{1}}{{\\text{{Waktu Pelayanan}}}} = \\frac{{1}}{{{waktu_pelayanan:.1f}}} = {mu:.1f} \\]</p>
 
             <li>Hitung tingkat pemanfaatan pelayan \\( \\rho \\):</li>
-            <p>\\[ \\rho = \\frac{{\\lambda}}{{2 \\mu}} = \\frac{{{lambda_val:.1f}}}{{2 \\times {mu:.3f}}} = {rho:.1f} \\]</p>
+            <p>\\[ \\rho = \\frac{{\\lambda}}{{2 \\mu}} = \\frac{{{lambda_val:.3f}}}{{2 \\times {mu:.1f}}} = {rho:.4f} \\]</p>
 
             <li>Hitung waktu total dalam sistem \\( W \\):</li>
-            <p>\\[ W = \\frac{{1}}{{\\mu - \\frac{{\\lambda}}{{2}}}} = \\frac{{1}}{{{mu:.3f} - \\frac{{{lambda_val:.1f}}}{{2}}}} = {W:.1f} \\] menit</p>
+            <p>\\[ W = \\frac{{1}}{{\\mu - \\frac{{\\lambda}}{{2}}}} = \\frac{{1}}{{{mu:.1f} - \\frac{{{lambda_val:.3f}}}{{2}}}} = {W:.4f} \\] menit</p>
 
             <li>Hitung waktu tunggu dalam antrian \\( W_q \\):</li>
-            <p>\\[ W_q = \\frac{{\\lambda^2}}{{2 \\mu (\\mu - \\frac{{\\lambda}}{{2}})}} = \\frac{{{lambda_val:.1f}}}{{2 \\times {mu:.3f} \\times \\left({mu:.3f} - \\frac{{{lambda_val:.1f}}}{{2}}\\right)}} = {Wq:.1f} \\] menit</p>
+            <p>\\[ W_q = \\frac{{\\lambda}}{{2 \\mu (\\mu - \\frac{{\\lambda}}{{2}})}} = \\frac{{{lambda_val:.3f}}}{{2 \\times {mu:.1f} \\times \\left({mu:.1f} - \\frac{{{lambda_val:.3f}}}{{2}}\\right)}} = {Wq:.4f} \\] menit</p>
         </ol>
 
         <p><strong>Hasil Akhir:</strong></p>
-        <p>Laju Kedatangan (\\( \\lambda \\)): \\( {lambda_val:.1f} \\) kedatangan/menit</p>
-        <p>Laju Pelayanan (\\( \\mu \\)): \\( {mu:.3f} \\) pelayanan/menit</p>
-        <p>Pemanfaatan Pelayan (\\( \\rho \\)): \\( {rho:.1f} \\)</p>
-        <p>Waktu Total dalam Sistem (\\( W \\)): \\( {W:.1f} \\) menit</p>
-        <p>Waktu Tunggu dalam Antrian (\\( W_q \\)): \\( {Wq:.1f} \\) menit</p>
+        <p>Laju Kedatangan (\\( \\lambda \\)): \\( {lambda_val:.3f} \\) kedatangan/menit</p>
+        <p>Laju Pelayanan (\\( \\mu \\)): \\( {mu:.1f} \\) pelayanan/menit</p>
+        <p>Pemanfaatan Pelayan (\\( \\rho \\)): \\( {rho:.4f} \\)</p>
+        <p>Waktu Total dalam Sistem (\\( W \\)): \\( {W:.4f} \\) menit</p>
+        <p>Waktu Tunggu dalam Antrian (\\( W_q \\)): \\( {Wq:.4f} \\) menit</p>
 
         <a href="/" class="back-link">Kembali ke Halaman Input</a>
     </div>
